@@ -24,7 +24,7 @@ int main()
 	get_number(&num2);
 
 	// perform sum and display
-	result = sum(num1, num2);
+	result = add(num1, num2);
 	print(result);
 
 return 0;
