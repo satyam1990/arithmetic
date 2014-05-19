@@ -145,6 +145,10 @@ number* add(number* num1, number* num2)
 		 * is to be subtracted from num1 
 		 */
 		result = subtract(num2, num1);
+
+		// restore changed sign
+		set_sign(num1, -1);
+
 		return result;
 	}
 	if (num1->sign == 1 &&  num2->sign == -1)
@@ -154,6 +158,10 @@ number* add(number* num1, number* num2)
 
 		// call subtract with arguments
 		result = subtract(num1, num2);
+
+		// restore changed sign
+		set_sign(num2, -1);
+
 		return result;
 	}
 	
@@ -215,6 +223,10 @@ number* subtract(number *num1, number *num2)
 		// set num2 sign as -ve and do addition
 		set_sign(num2, -1);
 		result = add(num1, num2);
+
+		// restore changed sign
+		set_sign(num2, 1);
+
 		return result;
 		
 	}
@@ -223,6 +235,10 @@ number* subtract(number *num1, number *num2)
 		// set num2 sign as +ve and do addition
 		set_sign(num2, 1);
 		result = add(num1, num2);
+
+		// restore changed sign
+		set_sign(num2, -1);
+
 		return result;
 	}
 
